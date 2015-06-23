@@ -95,6 +95,12 @@ With [npm](https://npmjs.org) do:
 
     npm install playback
 
+# modify applescript
+
+Run the below command after modifying applescript.
+
+    osacompile -o ITunesTransport.scpt ITunesTransport.applescript
+
 # release notes
 
 ## 0.2.0

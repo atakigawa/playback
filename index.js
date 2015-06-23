@@ -108,6 +108,10 @@ Playback.prototype.fadeOut = function(callback) {
     this.runTransportScript('fadeout', callback);
 };
 
+Playback.prototype.fadeOut2 = function(callback) {
+    this.runTransportScript('fadeout2', callback);
+};
+
 Playback.prototype.fadeIn = function(callback) {
     this.runTransportScript('fadein', callback);
 };

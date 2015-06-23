@@ -97,6 +97,23 @@ on FadeOut()
     end if
 end FadeOut
 
+on FadeOut2()
+    if IsRunning() and IsPlaying()
+        tell application "iTunes"
+            set originalVol to sound volume
+            set currentVol to sound volume
+            repeat with currentVol from sound volume to 0 by -1
+                set sound volume to currentVol
+                delay 0.02
+            end repeat
+        end tell
+        PausePlaying()
+        tell application "iTunes"
+            set sound volume to originalVol
+        end tell
+    end if
+end FadeOut2
+
 on FadeIn()
     if not IsRunning() then
         tell application "iTunes"
@@ -134,6 +151,8 @@ on run argv
         PlayPreviousTrack()
     else if command is "fadeout"
         FadeOut()
+    else if command is "fadeout2"
+        FadeOut2()
     else if command is "fadein"
         FadeIn()
     else
